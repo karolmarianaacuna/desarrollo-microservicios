@@ -1,0 +1,37 @@
+Pasos para documentar y crear el microservicio:
+
+1. Crear la carpeta del proyecto: microservicio-usuarios.
+2. Inicializar npm: npm init -y.
+3. Instalar dependencias: npm install express pg dotenv cors.
+4. Instalar nodemon como dependencia de desarrollo: npm install --save-dev nodemon.
+5. Crear la estructura de carpetas:
+
+microservicio-usuarios/
+│
+├── src/
+│   ├── controllers/
+│   │   └── auth.controller.js
+│   ├── config/
+│   │   └── db.js
+│   ├── routes/
+│   │   └── auth.routes.js
+│   ├
+│   └── server.js
+│
+├── .env
+├── package.json
+└── README.md
+
+6. Crear el archivo .env con las variables de entorno (puerto, usuario y conexión a PostgreSQL).
+7. Configurar la conexión a la base de datos en src/db/database.js.
+8. Crear la tabla de usuarios en PostgreSQL.
+9. Crear el modelo base de datos en src/models/user.model.js.
+10. Crear los controladores de autenticación (login y registro) en src/controllers/auth.controller.js.
+11. Definir las rutas en src/routes/auth.routes.js.
+12. Configurar Express en src/app.js.
+13. Crear el servidor principal en src/server.js.
+14. Ejecutar el proyecto con: nodemon src/server.js.
+15. Probar las rutas del login y registro usando Postman o curl.
+16. Documentar el código con comentarios claros en cada archivo.
+17. Opcional: integrar JWT, validaciones y hashing de contraseñas.
+18. Mantener una arquitectura modular para facilitar la reutilización.

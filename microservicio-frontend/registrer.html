@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>crear cuenta</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style type="text/tailwindcss">
+        :root {
+            --brand-pink: #ec1e79;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "brand-pink": "var(--brand-pink)",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-gray-200">
+    <div class="relative flex min-h-screen w-full flex-col items-center justify-center p-4 lg:p-8">
+        <header class="absolute top-0 left-0 w-full p-6 lg:p-8">
+            <a aria-label="Company Home" class="flex items-center gap-2" href="#">
+                  <div class="flex items-center gap-3 z-10">
+                                <span class=" text-4xl text-primary">
+                                    <img src="https://bhasecurity.odoo.com/web/image/website/1/logo/bhasecurity?unique=4c31c19" class="h-20" alt="">
+                                </span>
+                                <p class="text-xl font-bold">Black Hat Architype</p>
+                            </div>
+            </a>
+        </header>
+        <main class="flex w-full max-w-md overflow-hidden rounded-xl bg-[#0a0a0a] shadow-lg">
+            <div class="w-full p-6 sm:p-8 md:p-12">
+                <div class="flex w-full flex-col gap-8">
+                    <div class="flex flex-col gap-2 text-center">
+                        <h2 class="text-white text-3xl font-black leading-tight tracking-tight">Crea tu cuenta en Hat Architype</h2>
+                        <p class="text-gray-400 text-base font-normal leading-normal">Únete a la plataforma líder en estrategias de ciberseguridad y tecnología avanzada.</p>
+                    </div>
+                    <form class="flex flex-col gap-6">
+                        <label class="flex flex-col w-full">
+                            <p class="text-gray-200 text-sm font-medium leading-normal pb-2">Nombre completo</p>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-brand-pink/50 border border-gray-700 bg-[#141414] focus:border-brand-pink h-12 placeholder:text-gray-500 p-3 text-base font-normal leading-normal"
+                                placeholder="Ingresa tu Nombre completo " type="text" />
+                        </label>
+                        <label class="flex flex-col w-full">
+                            <p class="text-gray-200 text-sm font-medium leading-normal pb-2">Correo electrónico</p>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-brand-pink/50 border border-gray-700 bg-[#141414] focus:border-brand-pink h-12 placeholder:text-gray-500 p-3 text-base font-normal leading-normal"
+                                placeholder="Ingresa tu Correo electrónico" type="email" />
+                        </label>
+                        <label class="flex flex-col w-full">
+                            <p class="text-gray-200 text-sm font-medium leading-normal pb-2">Contraseña</p>
+                            <div class="relative flex w-full items-center">
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-brand-pink/50 border border-gray-700 bg-[#141414] focus:border-brand-pink h-12 placeholder:text-gray-500 p-3 pr-12 text-base font-normal leading-normal"
+                                    placeholder="Enter a secure password" type="password" />
+
+                            </div>
+                        </label>
+                        <div class="flex items-start gap-3">
+                            <input
+                                class="form-checkbox mt-0.5 h-5 w-5 rounded border-gray-600 text-brand-pink focus:ring-brand-pink bg-gray-800"
+                                id="terms" type="checkbox" />
+                            <label class="text-sm text-gray-400" for="terms">
+                                By creating an account, you agree to our
+                                <a class="font-medium text-brand-pink hover:underline" href="#">Terms of Service</a> and
+                                <a class="font-medium text-brand-pink hover:underline" href="#">Privacy Policy</a>.
+                            </label>
+                        </div>
+                        <button
+                            class="flex h-12 w-full items-center justify-center rounded-lg bg-brand-pink px-6 text-base font-bold text-white shadow-sm hover:bg-brand-pink/90 focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2 ring-offset-black"
+                            type="submit">
+                            Register
+                        </button>
+                        <p class="text-center text-sm text-gray-400">
+                            Already have an account?
+                            <a class="font-medium text-brand-pink hover:underline" href="#">Log In</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="absolute bottom-0 w-full p-6 text-center">
+            <p class="text-sm text-gray-500">© 2024 Black Hat Archetype. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
