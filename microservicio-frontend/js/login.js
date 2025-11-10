@@ -16,7 +16,15 @@ fomulario.addEventListener('submit', async(e)=>{
       password
     });
 
-     console.log(response.data.user);
+     // Aquí asumimos que el backend responde con algo como:
+    // { success: true, user: {...} }
+    if (response.data.success) {
+      console.log('Login correcto:', response.data.user);
+      // Redirigir al usuario
+      window.location.href = '/dashboard.html';
+    } else {
+      alert('Credenciales incorrectas');
+    }
 
     } catch (error) {
         
