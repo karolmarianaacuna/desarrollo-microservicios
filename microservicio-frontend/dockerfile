@@ -1,0 +1,8 @@
+# Imagen base de Nginx
+FROM nginx:alpine
+
+# Copiamos los archivos del frontend a la carpeta pública del servidor Nginx
+COPY . /usr/share/nginx/html
+
+# Exponemos el puerto del servidor web
+EXPOSE 80
