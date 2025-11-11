@@ -1,0 +1,20 @@
+# Imagen base de Node.js
+FROM node:18
+
+# Directorio de trabajo
+WORKDIR /app
+
+# Copiamos los archivos de dependencias
+COPY package*.json ./
+
+# Instalamos dependencias
+RUN npm install
+
+# Copiamos el resto del código
+COPY . .
+
+# Exponemos el puerto del servidor (ajústalo si usas otro)
+EXPOSE 4000
+
+# Comando para ejecutar el servicio
+CMD ["npm", "start"]
