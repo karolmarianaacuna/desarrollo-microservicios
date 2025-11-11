@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # 🟢 Microservicio de autenticación
+  auth-service:
+    build: ./microservicio-auth
+    container_name: microservicio-auth
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./microservicio-auth/.env
+    volumes:
+      - ./microservicio-auth:/app
+      - /app/node_modules
+    networks:
+      - micro_net
+
+  # 🔵 Microservicio frontend
+  frontend-service:
+    build: ./microservicio-frontend
+    container_name: microservicio-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - auth-service
+    networks:
+      - micro_net
+
+# 🌐 Red compartida entre microservicios
+networks:
+  micro_net:
+    driver: bridge
