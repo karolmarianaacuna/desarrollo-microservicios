@@ -16,5 +16,5 @@ COPY . .
 # Exponemos el puerto del servidor (ajústalo si usas otro)
 EXPOSE 4000
 
-# Comando para ejecutar el servicio
+# Comando para ejecutar el servicio ksjdsh
 CMD ["npm", "start"]
