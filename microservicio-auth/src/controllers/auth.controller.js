@@ -41,7 +41,7 @@ export const loginUser = async (req, res) => {
       return res.status(400).json({ message: 'Credenciales incorrectas' });
     }
 
-    res.json({ message: 'Inicio de sesión exitoso', user: user.rows[0] });
+    res.json({ message: true, user: user.rows[0] });
   } catch (error) {
     console.error('Error en login:', error);
     res.status(500).json({ message: 'Error al iniciar sesión', error });

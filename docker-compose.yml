@@ -1,7 +1,22 @@
 version: '3.8'
 
 services:
-  # 🟢 Microservicio de autenticación
+  # 🟢 Base de datos PostgreSQL
+  db:
+    image: postgres:16
+    container_name: microservicio-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: usuarios_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - micro_net
+
+  # 🟢 Microservicio de autenticación (Node.js)
   auth-service:
     build: ./microservicio-auth
     container_name: microservicio-auth
@@ -9,13 +24,21 @@ services:
       - "4000:4000"
     env_file:
       - ./microservicio-auth/.env
+    environment:
+      - DB_HOST=db                # 👈 Aquí se conecta al contenedor db
+      - DB_USER=admin
+      - DB_PASSWORD=admin
+      - DB_NAME=usuarios_db
+      - DB_PORT=5432
+    depends_on:
+      - db
     volumes:
       - ./microservicio-auth:/app
       - /app/node_modules
     networks:
       - micro_net
 
-  # 🔵 Microservicio frontend
+  # 🔵 Microservicio frontend (Nginx)
   frontend-service:
     build: ./microservicio-frontend
     container_name: microservicio-frontend
@@ -26,7 +49,11 @@ services:
     networks:
       - micro_net
 
-# 🌐 Red compartida entre microservicios
+# 🌐 Red compartida entre todos los microservicios
 networks:
   micro_net:
     driver: bridge
+
+# 💾 Volumen persistente para la base de datos
+volumes:
+  postgres_data:
