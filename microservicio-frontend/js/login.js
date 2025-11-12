@@ -18,7 +18,8 @@ fomulario.addEventListener('submit', async(e)=>{
 
      // Aquí asumimos que el backend responde con algo como:
     // { success: true, user: {...} }
-    if (response.data.success) {
+    if (response.data.menssage == true) {
+
       console.log('Login correcto:', response.data.user);
       // Redirigir al usuario
       window.location.href = '/dashboard.html';
