@@ -59,23 +59,23 @@
                         <h2 class="text-white text-3xl font-black leading-tight tracking-tight">Crea tu cuenta en Hat Architype</h2>
                         <p class="text-gray-400 text-base font-normal leading-normal">Únete a la plataforma líder en estrategias de ciberseguridad y tecnología avanzada.</p>
                     </div>
-                    <form class="flex flex-col gap-6">
+                    <form id="registerForm" class="flex flex-col gap-6">
                         <label class="flex flex-col w-full">
                             <p class="text-gray-200 text-sm font-medium leading-normal pb-2">Nombre completo</p>
-                            <input
+                            <input id="name"
                                 class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-brand-pink/50 border border-gray-700 bg-[#141414] focus:border-brand-pink h-12 placeholder:text-gray-500 p-3 text-base font-normal leading-normal"
                                 placeholder="Ingresa tu Nombre completo " type="text" />
                         </label>
                         <label class="flex flex-col w-full">
                             <p class="text-gray-200 text-sm font-medium leading-normal pb-2">Correo electrónico</p>
-                            <input
+                            <input id="email"
                                 class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-brand-pink/50 border border-gray-700 bg-[#141414] focus:border-brand-pink h-12 placeholder:text-gray-500 p-3 text-base font-normal leading-normal"
                                 placeholder="Ingresa tu Correo electrónico" type="email" />
                         </label>
                         <label class="flex flex-col w-full">
                             <p class="text-gray-200 text-sm font-medium leading-normal pb-2">Contraseña</p>
                             <div class="relative flex w-full items-center">
-                                <input
+                                <input id="password"
                                     class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-brand-pink/50 border border-gray-700 bg-[#141414] focus:border-brand-pink h-12 placeholder:text-gray-500 p-3 pr-12 text-base font-normal leading-normal"
                                     placeholder="Enter a secure password" type="password" />
 
@@ -109,6 +109,8 @@
         </footer>
     </div>
 
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./js/registrer.js"></script>
+    </body>
 
-</html>
+    </html>
