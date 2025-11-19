@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Hackaton - BH Security</title>
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <link rel="stylesheet" href="./css/chatbot.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+  
+    <div class="header-content">
+      <img src="./assets/images/bhasecurity.png" alt="BH Security" class="logo-header" />
+      <div>
+        <h1>PUNTOS DE SEGURIDAD</h1>
+        <h3>SECURITY POINTS</h3>
+        <h2>Bienvenido, <span id="nombreUsuario"></span></h2>
+        <p>Correo: <span id="correoUsuario"></span></p>
+
+      </div>
+      
+    </div>
+  </header>
+    <div class="contenido">
+    <!-- Panel lateral izquierdo con categorías y búsqueda -->
+    <div class="lateral-izquierda">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Buscar tecnología..." />
+      </div>
+      
+      
+      
+      <div class="icon-container">
+        <div class="icon-card">
+            <img
+              src="./assets/icon/Backup.png"
+              alt="Backup"
+              draggable="true"
+              data-name="Backup"
+              data-desc="Copia de seguridad de datos para recuperación en caso de pérdida o fallo."
+              data-key="backup"
+              class="icono"
+              data-img="./assets/icon/Backup.png"
+            />
+            <p>Backup</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Administrador_de_Canal.png"
+              draggable="true"
+              alt="Administrador de Canal"
+              data-name="Administrador de Canal"
+              data-desc="Gestión y control de canales de comunicación para seguridad y eficiencia."
+              data-key="administrador_canal"
+              class="icono"
+              data-img="./assets/icon/Administrador_de_Canal.png"
+            />
+            <p>Administrador de Canal</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Analisis_de_Vulnerabilidad.png"
+              draggable="true"
+              alt="Análisis de Vulnerabilidad"
+              data-name="Análisis de Vulnerabilidad"
+              data-desc="Evaluación de sistemas para identificar y mitigar riesgos de seguridad."
+              data-key="analisis_vulnerabilidad"
+              class="icono"
+              data-img="./assets/icon/Analisis_de_Vulnerabilidad.png"
+            />
+            <p>Análisis de Vulnerabilidad</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Anti_Spam.png"
+              alt="Anti_Spam"
+              draggable="true"
+              data-name="Anti Spam"
+              data-desc="Filtro y bloqueo de correos no deseados para proteger la bandeja de entrada."
+              data-key="anti_spam"
+              class="icono"
+              data-img="./assets/icon/Anti_Spam.png"
+            />
+            <p>Anti Spam</p>
+          </div>
+
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Antibot.png"
+              alt="Antibot"
+              draggable="true"
+              data-name="Antibot"
+              data-desc="Protección contra bots maliciosos para mantener la integridad del sistema."
+              data-key="antibot"
+              class="icono"
+              data-img="./assets/icon/Antibot.png"
+            />
+            <p>Antibot</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Antimalware.png"
+              alt="Antimalware"
+              draggable="true"
+              data-name="Antimalware"
+              data-desc="Detección y eliminación de software malicioso para proteger dispositivos."
+              data-key="antimalware"
+              class="icono"
+              data-img="./assets/icon/Antimalware.png"
+            />
+            <p>Antimalware</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Antivirus_de_Navegacion.png"
+              alt="Antivirus_de_Navegacion"
+              draggable="true"
+              data-name="Antivirus de Navegación"
+              data-desc="Protección en tiempo real contra amenazas mientras navegas por internet."
+              data-key="antivirus_navegacion"
+              class="icono"
+              data-img="./assets/icon/Antivirus_de_Navegacion.png"
+            />
+            <p>Antivirus de Navegación</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Antivirus_de_Correo.png"
+              alt="Antivirus_de_Correo"
+              draggable="true"
+              data-name="Antivirus de Correo"
+              data-desc="Escaneo y filtrado de correos electrónicos para evitar malware y phishing."
+              data-key="antivirus_correo"
+              class="icono"
+              data-img="./assets/icon/Antivirus_de_Correo.png"
+            />
+            <p>Antivirus de Correo</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Area_de_Seguridad.png"
+              alt="Area_de_Seguridad"
+              draggable="true"
+              data-name="Área de Seguridad"
+              data-desc="Zona dedicada a la gestión y monitoreo de la seguridad informática."
+              data-key="area_seguridad"
+              class="icono"
+              data-img="./assets/icon/Area_de_Seguridad.png"
+            />
+            <p>Área de Seguridad</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Balanceador_de_Carga.png"
+              alt="Balanceador_de_Carga"
+              draggable="true"
+              data-name="Balanceador de Carga"
+              data-desc="Distribución eficiente del tráfico para optimizar recursos y rendimiento."
+              data-key="balanceador_carga"
+              class="icono"
+              data-img="./assets/icon/Balanceador_de_Carga.png"
+            />
+            <p>Balanceador de Carga</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/CAR _Servicios-02.png"
+              alt="CAR_Servicios-02"
+              draggable="true"
+              data-name="CAR Servicios"
+              data-desc="Servicios de respuesta ante incidentes y análisis forense."
+              data-key="car_servicios"
+              class="icono"
+              data-img="./assets/icon/CAR_Servicios-02.png"
+            />
+            <p>CAR Servicios</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/CAR.png"
+              alt="CAR"
+              draggable="true"
+              data-name="CAR"
+              data-desc="Centro de Análisis y Respuesta para gestionar amenazas."
+              data-key="car"
+              class="icono"
+              data-img="./assets/icon/CAR.png"
+            />
+            <p>CAR</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Certificado_Digital.png"
+              alt="Certificado_Digital"
+              draggable="true"
+              data-name="Certificado Digital"
+              data-desc="Emisión y gestión de certificados para autenticación segura."
+              data-key="certificado_digital"
+              class="icono"
+              data-img="./assets/icon/Certificado_Digital.png"
+            />
+            <p>Certificado Digital</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Ciber_Camara.png"
+              alt="Ciber_Camara"
+              draggable="true"
+              data-name="Ciber Cámara"
+              data-desc="Monitoreo y vigilancia para la seguridad cibernética."
+              data-key="ciber_camara"
+              class="icono"
+              data-img="./assets/icon/Ciber_Camara.png"
+            />
+            <p>Ciber Cámara</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Cifrado_de_Canal.png"
+              alt="Cifrado_de_Canal"
+              draggable="true"
+              data-name="Cifrado de Canal"
+              data-desc="Protección de datos en tránsito mediante cifrado seguro."
+              data-key="cifrado_canal"
+              class="icono"
+              data-img="./assets/icon/Cifrado_de_Canal.png"
+            />
+            <p>Cifrado de Canal</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Cifrado.png"
+              alt="Cifrado"
+              draggable="true"
+              data-name="Cifrado"
+              data-desc="Técnicas y herramientas para proteger la información mediante cifrado."
+              data-key="cifrado"
+              class="icono"
+              data-img="./assets/icon/Cifrado.png"
+            />
+            <p>Cifrado</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Control_de_Amenzas_Avanzadas.png"
+              alt="Control_de_Amenzas_Avanzadas"
+              draggable="true"
+              data-name="Control de Amenazas Avanzadas"
+              data-desc="Soluciones para detectar y mitigar amenazas sofisticadas."
+              data-key="control_amenazas_avanzadas"
+              class="icono"
+              data-img="./assets/icon/Control_de_Amenzas_Avanzadas.png"
+            />
+            <p>Control de Amenazas Avanzadas</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Control_de_Aplicaciones.png"
+              alt="Control_de_Aplicaciones"
+              draggable="true"
+              data-name="Control de Aplicaciones"
+              data-desc="Gestión y restricción del uso de aplicaciones en la red."
+              data-key="control_aplicaciones"
+              class="icono"
+              data-img="./assets/icon/Control_de_Aplicaciones.png"
+            />
+            <p>Control de Aplicaciones</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Control_de_Vulnerabilidad.png"
+              alt="Control_de_Vulnerabilidad"
+              draggable="true"
+              data-name="Control de Vulnerabilidad"
+              data-desc="Identificación y mitigación de vulnerabilidades en sistemas."
+              data-key="control_vulnerabilidad"
+              class="icono"
+              data-img="./assets/icon/Control_de_Vulnerabilidad.png"
+            />
+            <p>Control de Vulnerabilidad</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Controlador_de_URL.png"
+              alt="Controlador_de_URL"
+              draggable="true"
+              data-name="Controlador de URL"
+              data-desc="Filtrado y control de acceso a sitios web mediante URLs."
+              data-key="controlador_url"
+              class="icono"
+              data-img="./assets/icon/Controlador_de_URL.png"
+            />
+            <p>Controlador de URL</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/CorrelaciOn_de_Logs.png"
+              alt="CorrelaciOn_de_Logs"
+              draggable="true"
+              data-name="Correlación de Logs"
+              data-desc="Análisis y correlación de registros para detectar incidentes."
+              data-key="correlacion_logs"
+              class="icono"
+              data-img="./assets/icon/CorrelaciOn_de_Logs.png"
+            />
+            <p>Correlación de Logs</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Data_Center_Titulo.png"
+              alt="Data_Center_Titulo"
+              draggable="true"
+              data-name="Data Center"
+              data-desc="Infraestructura y servicios para centros de datos seguros."
+              data-key="data_center"
+              class="icono"
+              data-img="./assets/icon/Data_Center_Titulo.png"
+            />
+            <p>Data Center</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/DDoS.png"
+              alt="DDoS"
+              draggable="true"
+              data-name="DDoS"
+              data-desc="Protección contra ataques de denegación de servicio distribuido."
+              data-key="ddos"
+              class="icono"
+              data-img="./assets/icon/DDoS.png"
+            />
+            <p>DDoS</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Dispositivo_Movil.png"
+              alt="Dispositivo_Movil"
+              draggable="true"
+              data-name="Dispositivo Móvil"
+              data-desc="Seguridad y gestión de dispositivos móviles."
+              data-key="dispositivo_movil"
+              class="icono"
+              data-img="./assets/icon/Dispositivo_Movil.png"
+            />
+            <p>Dispositivo Móvil</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/DMZTitulo.png"
+              alt="DMZTitulo"
+              draggable="true"
+              data-name="DMZ"
+              data-desc="Zona desmilitarizada para aislar servicios públicos."
+              data-key="dmz"
+              class="icono"
+              data-img="./assets/icon/DMZTitulo.png"
+            />
+            <p>DMZ</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/EDR_Analisis_Forence.png"
+              alt="EDR_Analisis_Forence"
+              draggable="true"
+              data-name="EDR Análisis Forense"
+              data-desc="Detección y respuesta ante amenazas en endpoints."
+              data-key="edr_analisis_forense"
+              class="icono"
+              data-img="./assets/icon/EDR_Analisis_Forence.png"
+            />
+            <p>EDR Análisis Forense</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Firewall.png"
+              alt="Firewall"
+              draggable="true"
+              data-name="Firewall"
+              data-desc="Protección perimetral y control de tráfico de red."
+              data-key="firewall"
+              class="icono"
+              data-img="./assets/icon/Firewall.png"
+            />
+            <p>Firewall</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Firmas_Digitales.png"
+              alt="Firmas_Digitales"
+              draggable="true"
+              data-name="Firmas Digitales"
+              data-desc="Autenticación y validación de documentos digitales."
+              data-key="firmas_digitales"
+              class="icono"
+              data-img="./assets/icon/Firmas_Digitales.png"
+            />
+            <p>Firmas Digitales</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Fuga_de_Informacion.png"
+              alt="Fuga_de_Informacion"
+              draggable="true"
+              data-name="Fuga de Información"
+              data-desc="Prevención y detección de filtraciones de datos."
+              data-key="fuga_informacion"
+              class="icono"
+              data-img="./assets/icon/Fuga_de_Informacion.png"
+            />
+            <p>Fuga de Información</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Gestor_de_Identidad.png"
+              alt="Gestor_de_Identidad"
+              draggable="true"
+              data-name="Gestor de Identidad"
+              data-desc="Gestión centralizada de identidades y accesos."
+              data-key="gestor_identidad"
+              class="icono"
+              data-img="./assets/icon/Gestor_de_Identidad.png"
+            />
+            <p>Gestor de Identidad</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/IPS.png"
+              alt="IPS"
+              draggable="true"
+              data-name="IPS"
+              data-desc="Sistema de prevención de intrusiones para proteger la red."
+              data-key="ips"
+              class="icono"
+              data-img="./assets/icon/IPS.png"
+            />
+            <p>IPS</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/IPv4-IPv6.png"
+              alt="IPv4-IPv6"
+              draggable="true"
+              data-name="IPv4-IPv6"
+              data-desc="Transición y coexistencia entre protocolos IP."
+              data-key="ipv4_ipv6"
+              class="icono"
+              data-img="./assets/icon/IPv4-IPv6.png"
+            />
+            <p>IPv4-IPv6</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/LAN_Titulo.png"
+              alt="LAN_Titulo"
+              draggable="true"
+              data-name="LAN"
+              data-desc="Red de área local para interconexión de dispositivos."
+              data-key="lan"
+              class="icono"
+              data-img="./assets/icon/LAN_Titulo.png"
+            />
+            <p>LAN</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Modem_wifi.png"
+              alt="Modem_wifi"
+              draggable="true"
+              data-name="Módem WiFi"
+              data-desc="Dispositivo para conexión inalámbrica a internet."
+              data-key="modem_wifi"
+              class="icono"
+              data-img="./assets/icon/Modem_wifi.png"
+            />
+            <p>Módem WiFi</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Monitoreo_de_Integridad.png"
+              alt="Monitoreo_de_Integridad"
+              draggable="true"
+              data-name="Monitoreo de Integridad"
+              data-desc="Supervisión continua de la integridad de sistemas y archivos."
+              data-key="monitoreo_integridad"
+              class="icono"
+              data-img="./assets/icon/Monitoreo_de_Integridad.png"
+            />
+            <p>Monitoreo de Integridad</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/NAC_Network_Access_Control.png"
+              alt="NAC_Network_Access_Control"
+              draggable="true"
+              data-name="NAC Network Access Control"
+              data-desc="Control de acceso a la red basado en políticas."
+              data-key="nac_network_access_control"
+              class="icono"
+              data-img="./assets/icon/NAC_Network_Access_Control.png"
+            />
+            <p>NAC Network Access Control</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Nube_Titulo.png"
+              alt="Nube_Titulo"
+              draggable="true"
+              data-name="Nube"
+              data-desc="Infraestructura y servicios en la nube."
+              data-key="nube_titulo"
+              class="icono"
+              data-img="./assets/icon/Nube_Titulo.png"
+            />
+            <p>Nube</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Nube.png"
+              alt="Nube"
+              draggable="true"
+              data-name="Nube"
+              data-desc="Servicios y almacenamiento en la nube."
+              data-key="nube"
+              class="icono"
+              data-img="./assets/icon/Nube.png"
+            />
+            <p>Nube</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/PC_Punto_Final.png"
+              alt="PC_Punto_Final"
+              draggable="true"
+              data-name="PC Punto Final"
+              data-desc="Dispositivo final en la red, como computadoras personales."
+              data-key="pc_punto_final"
+              class="icono"
+              data-img="./assets/icon/PC_Punto_Final.png"
+            />
+            <p>PC Punto Final</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Proxy.png"
+              alt="Proxy"
+              draggable="true"
+              data-name="Proxy"
+              data-desc="Servidor intermedio para solicitudes de recursos."
+              data-key="proxy"
+              class="icono"
+              data-img="./assets/icon/Proxy.png"
+            />
+            <p>Proxy</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Servidor.png"
+              alt="Servidor"
+              draggable="true"
+              data-name="Servidor"
+              data-desc="Equipo que proporciona servicios a otros dispositivos."
+              data-key="servidor"
+              class="icono"
+              data-img="./assets/icon/Servidor.png"
+            />
+            <p>Servidor</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Servidor_Virtual.png"
+              alt="Servidor_Virtual"
+              draggable="true"
+              data-name="Servidor Virtual"
+              data-desc="Servidor emulado en un entorno virtual."
+              data-key="servidor_virtual"
+              class="icono"
+              data-img="./assets/icon/Servidor_Virtual.png"
+            />
+            <p>Servidor Virtual</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/Switch.png"
+              alt="Switch"
+              draggable="true"
+              data-name="Switch"
+              data-desc="Dispositivo de red para conectar múltiples dispositivos."
+              data-key="switch"
+              class="icono"
+              data-img="./assets/icon/Switch.png"
+            />
+            <p>Switch</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/USB.png"
+              alt="USB"
+              draggable="true"
+              data-name="USB"
+              data-desc="Puerto universal en serie para conectar periféricos."
+              data-key="usb"
+              class="icono"
+              data-img="./assets/icon/USB.png"
+            />
+            <p>USB</p>
+          </div>
+          <div class="icon-card">
+            <img
+              src="./assets/icon/WAF.png"
+              alt="WAF"
+              draggable="true"
+              data-name="WAF"
+              data-desc="Firewall de aplicaciones web para proteger sitios web."
+              data-key="waf"
+              class="icono"
+              data-img="./assets/icon/WAF.png"
+            />
+            <p>WAF</p>
+          </div>
+        
+        
+      </div>
+    </div>
+
+    <!-- Área principal de trabajo -->
+    <div class="area-central">
+      <div class="contenedor-mapa">
+        <img src="./assets/images/fondo.png" class="mapa-img-export" alt="Mapa de fondo para exportar">
+        <div class="mapa" id="mapa">
+          <div class="mapa-overlay">
+            <h3>Arrastra los elementos de seguridad al mapa</h3>
+            <p>Suelta los iconos en la posición deseada para construir tu arquitectura</p>
+          </div>
+          </div>
+      </div>
+      
+      <div class="controls">
+         <button class="btn-control" id="btnGenerateDiagram"><i class="fas fa-file-pdf"></i></button>
+        <button class="btn-control" id="btnZoomIn"><i class="fas fa-search-plus"></i></button>
+        <button class="btn-control" id="btnZoomOut"><i class="fas fa-search-minus"></i></button>
+        <button class="btn-control" id="btnCenter"><i class="fas fa-crosshairs"></i></button>
+        <button class="btn-control" id="btnClear"><i class="fas fa-trash-alt"></i></button>
+      </div>
+    </div>
+
+    
+
+    <!-- Panel lateral derecho con información y acciones -->
+    <div class="lateral-derecha">
+      <div class="info-panel">
+        <div class="info-content">
+          <h2>CONSTRUCTOR DE ARQUITECTURA DE SEGURIDAD</h2>
+          <p>Arrastra y suelta los componentes de seguridad para diseñar tu infraestructura ideal. 
+            Haz clic en cada elemento para ver detalles y recomendaciones.</p>
+        </div>
+      </div>
+     
+      <div id="infoCard" class="hidden">
+        <div class="card-header">
+          <img id="cardImg" src="" alt="" />
+          <div>
+            <h3 id="cardTitle"></h3>
+            
+          </div>
+          <button class="close-card"><i class="fas fa-times"></i></button>
+        </div>
+        <p id="cardDesc"></p>
+        
+      </div>
+      
+      
+
+      <div class="action-buttons">
+            <button class="btn-informe  btn-action primary" id="btnGenerateReport">
+                <i class="fas fa-file-pdf"></i> Generar Informe
+            </button>
+            
+
+            <div class="more-actions">
+
+            <div class="btn-wrapper">
+             <button class="btn-action" id="btnPreview">
+                <i class="fas fa-eye"></i> Vista 
+              </button>
+          
+               <div class="popup">
+                <img src="./assets/images/fondo2.png" alt="Vista previa del mapa" />
+  
+              </div>
+
+              
+            </div>
+            <div class="btn-wrapper">
+              <button class="btn-video btn-action">Instrucciones</button>
+               <div class=" popup popup-video ">
+                <button class="close-video "><i class="fas fa-times"></i></button>
+                 <video
+                 class="video-instructions"
+                src="./assets/images/video.mp4"
+                controls
+                autoplay
+                muted
+                loop
+              ></video> 
+             </div>
+            </div>
+            
+      </div>
+
+      
+    </div>
+  </div>
+  </div>
+  </div>
+<div class="app hidden" role="application" aria-label="Chatbot Seguridad">
+    <div class="header">
+      <div class="title">Asistente Seguridad</div>
+      <div class="small">Estado: <span id="status">Listo</span></div>
+    </div>
+    <section class="chat" id="chat"></section>
+    <div class="suggestions">
+      <div class="suggestion" data-q="¿Por qué BACKUP?">BACKUP</div>
+      <div class="suggestion" data-q="Explica FIREWALL">FIREWALL</div>
+      <div class="suggestion" data-q="Qué es NUBE">NUBE</div>
+    </div>
+    <div class="input-area">
+      <input id="userInput" type="text" placeholder="Ej: ¿Qué es un FIREWALL?" />
+
+     
+      <button id="sendBtn" class="icon-btn" title="Enviar mensaje">➡️</button>
+
+    </div>
+  </div>
+
+  <!-- Botón flotante -->
+  <button id="toggleChat" class="toggle-btn">💬</button>
+  <template id="tplMsg"><div class="msg bot"></div></template>
+
+  <footer>
+    <div class="footer-content">
+      <img src="./assets/images/bha-pagina-web.png" alt="BH Security" />
+      <p>© 2023 BH Security - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/micro.js"></script>
+
+
+  
+  </body>
+
+
+</html>
