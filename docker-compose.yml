@@ -25,7 +25,7 @@ services:
     env_file:
       - ./microservicio-auth/.env
     environment:
-      - DB_HOST=db                # 👈 Aquí se conecta al contenedor db
+      - DB_HOST=db
       - DB_USER=admin
       - DB_PASSWORD=admin
       - DB_NAME=usuarios_db
@@ -38,7 +38,7 @@ services:
     networks:
       - micro_net
 
-  # 🔵 Microservicio frontend (Nginx)
+  # 🔵 Microservicio frontend principal (Nginx)
   frontend-service:
     build: ./microservicio-frontend
     container_name: microservicio-frontend
@@ -46,6 +46,17 @@ services:
       - "8080:80"
     depends_on:
       - auth-service
+    networks:
+      - micro_net
+
+  # 🟣 Nuevo microservicio del juego (Nginx)
+  juego-service:
+    build: ./microservicio-juego       # 👈 Ajusta si tiene otro nombre
+    container_name: microservicio-juego
+    ports:
+      - "8089:8089"                    # 👈 Expuesto en tu Dockerfile
+    depends_on:
+      - auth-service                   # 👈 Conecta después del auth si lo usa
     networks:
       - micro_net
 
