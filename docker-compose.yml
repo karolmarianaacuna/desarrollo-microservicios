@@ -27,7 +27,7 @@ services:
       - DB_HOST=db
       - DB_USER=admin
       - DB_PASSWORD=admin
-      - DB_NAME=usuarios_db
+      - DB_DATABASE=usuarios_db
       - DB_PORT=5432
     depends_on:
       - db
