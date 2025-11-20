@@ -31,7 +31,7 @@ if (loginForm) {
         }
 
         // Redirect to game microservice (no tokens used)
-        window.location.href = 'http://localhost:5000/';
+        window.location.href = 'http://localhost:8089/';
         return;
       }
 
