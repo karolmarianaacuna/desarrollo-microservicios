@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (!user) {
     // Si el usuario no existe, redirigir al frontend de LOGIN en Docker
-    window.location.href = 'http://localhost:5000/login.html';
+    window.location.href = 'http://localhost:8089/login.html';
     return;
   }
 
