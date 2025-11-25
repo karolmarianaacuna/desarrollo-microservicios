@@ -50,7 +50,7 @@ describe('Pruebas unitarias de auth.controller.js', () => {
     expect(mockQuery).toHaveBeenCalledTimes(2);
     expect(mockQuery).toHaveBeenNthCalledWith(
       1, 
-      'SELECT * FROM users WHERE email=$1', 
+      'SELECT * FROM users WHERE email = $1', 
       ['juan@test.com']
     );
     expect(mockQuery).toHaveBeenNthCalledWith(

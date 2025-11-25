@@ -20,6 +20,7 @@ if (registerForm) {
       } else {
         alert(response.data.message || 'Could not register user');
       }
+      
     } catch (error) {
       console.error('Register error:', error);
       const backendMessage = error.response?.data?.message;
@@ -33,3 +34,5 @@ if (registerForm) {
 } else {
   console.warn('Register form not found (id=registerForm)');
 }
+
+

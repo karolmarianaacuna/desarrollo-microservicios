@@ -43,7 +43,7 @@ if (loginForm) {
         } catch (e) {
           console.warn('Could not save user in localStorage:', e);
         }
-        window.location.href = 'http://localhost:5000/';
+        window.location.href = 'http://localhost:8089/';
         return;
       }
 
