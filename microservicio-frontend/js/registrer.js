@@ -20,7 +20,7 @@ if (registerForm) {
 
       if (response.data && response.data.success) {
         alert(response.data.message || "User registered successfully");
-        window.location.href = "http://localhost:8080/login.html"; // <-- cambiar a tu ruta real
+        window.location.href = "http://localhost:8080/index.html"; // <-- cambiar a tu ruta real
       }
     } catch (error) {
       console.error("Register error:", error);
